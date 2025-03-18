@@ -1,0 +1,55 @@
+<div class="registro-container">
+    <h2>Crear Usuario</h2>
+  
+    <!-- Mostrar mensajes de éxito o error -->
+    <div *ngIf="successMessage" class="success-message">
+      {{ successMessage }}
+    </div>
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  
+    <!-- Formulario para crear un nuevo usuario -->
+    <form (ngSubmit)="createUser()">
+      <div class="form-group">
+        <label for="name">Nombre:</label>
+        <input 
+          type="text" 
+          id="name" 
+          [(ngModel)]="newUser.name" 
+          name="name" 
+          class="form-control" 
+          required 
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="age">Edad:</label>
+        <input 
+          type="number" 
+          id="age" 
+          [(ngModel)]="newUser.age" 
+          name="age" 
+          class="form-control" 
+          required 
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Correo electrónico:</label>
+        <input 
+          type="email" 
+          id="email" 
+          [(ngModel)]="newUser.email" 
+          name="email" 
+          class="form-control" 
+          required 
+        />
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="!newUser.name || !newUser.age || !newUser.email">
+        Crear Usuario
+      </button>
+    </form>
+  </div>
+  

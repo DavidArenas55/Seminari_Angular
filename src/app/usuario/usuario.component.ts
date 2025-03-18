@@ -3,9 +3,10 @@ import { Component, inject } from '@angular/core';
 import { User } from '../models/user.model';
 import { ColaboradoresComponent } from "../colaboradores/colaboradores.component";
 import { FormsModule } from '@angular/forms';
+import { RegistroComponent } from '../registro/registro.component';
 @Component({
   selector: 'app-usuario',
-  imports: [CommonModule, ColaboradoresComponent, FormsModule],
+  imports: [CommonModule, ColaboradoresComponent, FormsModule, RegistroComponent],
   templateUrl: './usuario.component.html',
   styleUrl: './usuario.component.css',
   standalone: true

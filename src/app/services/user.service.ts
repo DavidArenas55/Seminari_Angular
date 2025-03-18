@@ -16,6 +16,11 @@ export class UserService {
     return this.http.get<User[]>(this.apiUrl);
   }
 
+  // Método para crear un usuario
+  createUser(user: User): Observable<User>{
+    return this.http.post<User>(this.apiUrl, user);
+  }
+
   //No s'utilitza però es pot fer servir per obtenir un usuari en concret a partir de la seva id
   getUser(id: number): Observable<User>{
     return this.http.get<User>(this.apiUrl+"/"+id);
